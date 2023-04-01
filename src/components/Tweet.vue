@@ -1,43 +1,29 @@
 <script setup>
+  import ProfileImage from './ProfileImage.vue'
+  import User from './User.vue'
+  import Timestamp from './Timestamp.vue'
+  import Message from './Message.vue'
+  import Actions from './Actions.vue'
+  
   const props = defineProps({
-    name: String,
-    image: String,
-    handle: String,
-    message: String,
-    timestamp: String
+    user: Object,
+    timestamp: String,
+    message: String
   });
-
+  
 </script>
 
 <template>
   <div class="tweet">
-    <img
-      src="{{ image }}"
-      class="profile"
-      alt="profile"
-    />
+    <ProfileImage :image="user.image"/>
 
     <div class="body">
       <div class="top">
-        <span class="user">
-          <span class="name">{{ name }}</span>
-          <span class="handle">{{ handle }}</span>
-        </span>
-
-        <span class="timestamp">{{ timestamp }}</span>
+        <User :name="user.name" :handle="user.handle"   />
+        <Timestamp :timestamp="timestamp"/>
       </div>
-
-      <p class="message">
-        {{ message }}
-      </p>
-
-      <div class="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+      <Message :message="message"/>
+      <Actions/>  
     </div>
 
     <i class="fas fa-ellipsis-h"></i>
