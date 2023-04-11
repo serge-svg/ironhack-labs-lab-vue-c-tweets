@@ -6,7 +6,10 @@
   import Actions from './Actions.vue'
   
   const props = defineProps({
-    user: Object,
+    user: {
+      type: Object,
+      required: true,
+    },
     timestamp: String,
     message: String
   });
@@ -29,9 +32,3 @@
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
-
-<style scoped>
-a {
-  color: #42b983;
-}
-</style>
