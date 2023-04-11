@@ -52,7 +52,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
+ 
   .app {
     text-align: center;
   }
