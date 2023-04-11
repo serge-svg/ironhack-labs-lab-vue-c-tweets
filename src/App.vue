@@ -55,6 +55,7 @@
  
   .app {
     text-align: center;
+    padding: 20px;
   }
 
   .app-logo {
@@ -90,10 +91,6 @@
     to {
       transform: rotate(360deg);
     }
-  }
-
-  .app {
-    padding: 20px;
   }
 
   .tweet {
@@ -171,4 +168,7 @@
     color: #536471;
   }
 
+  .plus-sign {
+    padding-left: 5px;
+  }
 </style>
