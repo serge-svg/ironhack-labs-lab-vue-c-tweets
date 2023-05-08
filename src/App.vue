@@ -1,14 +1,18 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet v-for="(tweet, index) in tweets" :key="index"
+     :user="tweet.user"
+     :timestamp="tweet.timestamp"
+     :message="tweet.message"
+    />
   </div>
 </template>
 
 <script setup>
-  import { ref } from 'vue';
+  import { reactive } from 'vue';
   import Tweet from './components/Tweet.vue';
 
-  const tweets = ref([
+  const tweets = reactive([
     {
       user: {
         name: "Thoughts of Dog®",
@@ -48,9 +52,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
+ 
   .app {
     text-align: center;
+    padding: 20px;
   }
 
   .app-logo {
@@ -86,10 +91,6 @@
     to {
       transform: rotate(360deg);
     }
-  }
-
-  .app {
-    padding: 20px;
   }
 
   .tweet {
@@ -167,4 +168,7 @@
     color: #536471;
   }
 
+  .plus-sign {
+    padding-left: 5px;
+  }
 </style>
